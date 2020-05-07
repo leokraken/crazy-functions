@@ -27,7 +27,7 @@ func Handle(w http.ResponseWriter, r *http.Request) {
 
 	// Send response
 	w.WriteHeader(http.StatusOK)
-	w.Write([]byte(fmt.Sprintf("%s-%s\n", adjective, bird)))
+	w.Write([]byte(fmt.Sprintf("%s_%s\n", strings.ToLower(adjective), strings.ToLower(bird))))
 }
 
 func ReadFileToArray(filename string) []string {
